@@ -1,5 +1,6 @@
 package com.example.ac2.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EscolaRepository {
-    private List <Escola> escolas;
+    private List <Escola> escolas = new ArrayList<Escola>();
     private int nextCodigo=1;
 
     public List<Escola> getAllEscolas(){
@@ -39,7 +40,7 @@ public class EscolaRepository {
         Escola aux = getEscolaByCodigo(escola.getCodigo()).get();
 
         if(aux != null){
-            aux.setEndereco(escola.getEndereco());
+            aux.setNome(escola.getNome());
             aux.setTelefone(escola.getTelefone());
         }
         return aux;

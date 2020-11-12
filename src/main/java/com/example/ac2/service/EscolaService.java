@@ -22,6 +22,7 @@ public class EscolaService {
 
         Escola escola = new Escola();
         escola.setNome(dto.getNome());
+        escola.setEndereco(dto.getEndereco());
         escola.setTelefone(dto.getTelefone());
         return escola;
     }

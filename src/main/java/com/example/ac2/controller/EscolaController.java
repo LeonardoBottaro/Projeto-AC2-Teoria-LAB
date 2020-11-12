@@ -69,7 +69,7 @@ public class EscolaController {
         return ResponseEntity.ok(escola);
     }
 
-    @PostMapping("{id}/cursos")
+    @PostMapping("{codigo}/cursos")
     public ResponseEntity<Void> salvar(@PathVariable int codigo, @RequestBody Curso curso, HttpServletRequest request, UriComponentsBuilder builder){
         curso = cursoService.salvar(curso, codigo);
         UriComponents uriComponents = builder.path(request.getRequestURI() + "/" + curso.getCodigo()).build();
