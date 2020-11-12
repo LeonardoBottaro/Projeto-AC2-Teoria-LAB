@@ -3,6 +3,7 @@ package com.example.ac2.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.ac2.dto.EscolaDTO;
 import com.example.ac2.model.Escola;
 import com.example.ac2.repository.EscolaRepository;
 
@@ -16,6 +17,14 @@ public class EscolaService {
     
     @Autowired
     private EscolaRepository repositorio;
+
+    public Escola fromDTO(EscolaDTO dto){
+
+        Escola escola = new Escola();
+        escola.setNome(dto.getNome());
+        escola.setTelefone(dto.getTelefone());
+        return escola;
+    }
 
     public List<Escola> getAllEscolas(){
         return repositorio.getAllEscolas();

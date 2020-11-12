@@ -4,7 +4,7 @@ public class Curso {
     private int codigo;
     private String nome;
     private String descricao;
-    private double valor;
+    private Escola escola;
     private boolean cursoCheio;
 
     public Curso(){
@@ -35,14 +35,6 @@ public class Curso {
         this.descricao = descricao;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public boolean isCursoCheio() {
         return cursoCheio;
     }
@@ -51,11 +43,20 @@ public class Curso {
         this.cursoCheio = cursoCheio;
     }
 
+    public Escola getEscola() {
+        return escola;
+    }
+
+    public void setEscola(Escola escola) {
+        this.escola = escola;
+    }
+
     @Override
     public String toString() {
-        return "Curso [codigo=" + codigo + ", cursoCheio=" + cursoCheio + ", descricao=" + descricao + ", nome=" + nome
-                + ", valor=" + valor + "]";
+        return "Curso [codigo=" + codigo + ", cursoCheio=" + cursoCheio + ", descricao=" + descricao + ", escola="
+                + escola + ", nome=" + nome + "]";
     }
+
 
     
 }
