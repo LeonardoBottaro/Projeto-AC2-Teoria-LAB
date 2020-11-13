@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.example.ac2.dto.CursoDTO;
 import com.example.ac2.dto.EscolaDTO;
 import com.example.ac2.model.Curso;
 import com.example.ac2.model.Escola;
@@ -76,6 +77,11 @@ public class EscolaController {
         return ResponseEntity.created(uriComponents.toUri()).build();
     }
 
+    @GetMapping("{codigo}/cursos")
+    public List<CursoDTO> getCursosEscola(@PathVariable int codigo){
 
+        Escola escola = escolaService.getEscolaByCodigo(codigo);
+        return cursoService.toListDTO(escola.getCursos());
+    }
     
 }
