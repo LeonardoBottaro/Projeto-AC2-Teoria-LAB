@@ -7,6 +7,7 @@ import com.example.ac2.service.CursoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,12 @@ public class CursoController {
     @GetMapping()
     public List<Curso> getCursos(){
         return service.getAllCursos();
+    }
+
+    @DeleteMapping("/{codigo}")
+    public ResponseEntity<Void> remover(@PathVariable int codigo){
+        service.removeByCodigo(codigo);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/{codigo}")

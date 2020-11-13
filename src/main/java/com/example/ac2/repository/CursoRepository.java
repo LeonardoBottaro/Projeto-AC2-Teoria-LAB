@@ -31,4 +31,8 @@ public class CursoRepository {
         cursos.add(curso);
         return curso;
     }
+
+    public void remove(Curso curso){
+        cursos.remove(curso);
+    }
 }

@@ -57,4 +57,8 @@ public class CursoService {
 
         return repositorio.save(curso);
     }
+
+    public void removeByCodigo(int codigo){
+        repositorio.remove(getCursoByCodigo(codigo));
+    }
 }
